@@ -6,6 +6,7 @@
 
   - Text Contents
   - Image, Video, Audio Contents
+    - Embed(ed) contents
 
 - Structure
 
@@ -110,9 +111,223 @@ WYSIWYG(What You See Is What You Get : 네가 보는 것이 얻는 것이다)
 
 - a(nchor) : 하이퍼링크 연결 태그
 - href(hypertext reference) : 목적지 정보 제공 속성(attribute)
+- bookmark
+  - 연결된 페이지로 이동하지 않고, 같은 페이지 내에서 위아래 이동하는 것
 
 ```
+- page link
 <a href="url">텍스트</a>
+
+- bookmark
+
+- link
+<a href="#target">목적지</a>
+Ex) <p><a href="#C4">Jump to Chapter 4</a></p>
+
+- target
+<h2 id="target">단락 제목</h2>
+Ex) <h2 id="C4">Chapter 4</h2>
+
 ```
 
 - URL(Uniform Resource Locator) : 파일위치식별자
+
+- 인터넷 주소체계
+  - IP(Internet Protocol) address : 인터넷에서 사용하는 주소
+  - Domain name : IP 주소를 영어단어로 표현
+    - 서버종류 : www
+    - 회사이름 : naver, daum
+    - 기관성격 : com, net (3자리) / co, go, ac (4자리)
+    - 국가(4자리) : kr, uk, ca, fr ...
+
+```
+- IP : 0~255까지 숫자 4개로 구성
+Ex) 192.168.0.1
+
+인터넷 접속 프로세스 : 주소표시줄에 Domain Name 입력 => IP주소로 변환 => 접속
+
+- URL 체계
+
+IP 또는 Domain 주소/상세경로/파일정보
+Ex) https://www.w3schools.com/html/default.asp
+```
+
+### HTML Table
+여기 사이트에서 편집 후 복,붙하면 됨! https://www.tablesgenerator.com/html_tables
+
+```
+<table> : 테이블 작성
+  <tr> : table row - 행
+    <th></th> : table header - 열제목
+  </tr>
+  <tr>
+    <td></td> : table data - 데이터
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</table>
+```
+
+### HTML List
+
+- ul(Unordered List) : 순서없는 목록
+  - 기호로 표시
+- ol(Ordered List) : 순서있는 목록
+  - 숫자로 표시(알파벳, 한글)
+- li(List Item) : 목록 아이템
+- 중첩목록(Nested List)
+
+```
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JS</li>
+</ul>
+
+<Ol>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JS</li>
+</Ol>
+```
+
+- Description List : 설명목록
+  - dl(Description List)
+  - dt(Description title)
+  - dd(Description Data)
+
+```
+<dl>
+  <dt>목록 주제</dt>
+  <dd>목록 설명</dd>
+  <dt>목록 주제</dt>
+  <dd>목록 설명</dd>
+</dl>
+```
+
+### HTML Image
+
+- img
+- src(source) : 이미지 파일 경로/파일명 표시
+- alt(ernative) : 대체 텍스트
+
+```
+<img src="www.naver.com/html/photo.jpg" alt="이미지 설명"> <-- empty element-->
+src 없으면 충돌 날 수 있음
+```
+
+- 이미지 형식
+  - 비트맵(포토샵) - 색상 표현 우수, 벡터(일러스트레이터) - 고배율 화질 유지 이미지
+  - 비트맵 이미지 형식
+    - jpg : 사진
+    - png : 투명 배경
+    - gif : 용량이 작음(색상 표현이 적음) - 로고, 애니메이션
+  - 벡터 이미지
+    - svg
+
+### HTML video
+
+- video
+  - 이름만 사용하는 attribute는 on/off 기능 형태
+  - controls : 재생 컨트롤을 화면에 표시
+  - autoplay : 자동 재생
+  - muted : 소리 제거
+
+- 
+
+```
+<video>
+  <source src="www.daum.net/video/movie.mp4" type="video/mp4">
+</video>
+```
+
+### Youtube Video
+
+- option, parameter(매개변수)
+유튜브용 매개변수 https://developers.google.com/youtube/player_parameters?hl=ko#autoplay
+영상 퍼다쓰는 사이트 https://vimeo.com/
+
+```
+<iframe src="youtube-url?parameter1=0&parameter2=1&parameter3=0"></iframe>
+```
+
+## HTML Structure
+
+### Semantic Element
+
+- grouping 또는 구분하는 Element를 의미있게 사용
+- 의미있는 grouping Element가 추가
+- Contents Element와 Semantic Element를 목적에 맞게 제대로 구성하는 것이 검색엔진(SEO: Search    Engine Optimization)에 웹사이트 관련 정보를 잘 노출시킬 수 있는 방법 중 하나
+
+- header
+  - 소개 콘텐츠(logo...), 탐색링크(상단메뉴, 검색바), 로그인, 언어선택...
+
+- nav(igation)
+  - 메뉴
+
+- section
+  - 제목, 내용으로 구성된 하나의 영역
+- article
+  - 독립적인 글 또는 콘텐츠
+  => section과 article의 역할과 의미가 비슷해서, 논쟁이 있으나 강사님 말로는 section > article
+
+- aside
+  - 부수적인 콘텐츠 영역
+
+- footer
+  - 연락처
+  - 사이트 맵
+  - 저작권
+  - 연관 링크
+
+- figure
+  - embeded contents 또는 그림형태의 콘텐츠를 grouping 하는 요소
+
+### Container Element
+
+- 단순 구역 나누는 / grouping 하는 요소
+- div(ision)
+- span
+
+## 파일 경로 표시 방식
+
+  - 절대 경로(주소) 방식 ** 일반적 사용 **
+    - 항상 똑같은 경로(주소) 표시 가능
+    - 주소 표시 방식이 복잡함(너무 길다)
+  ```
+  href="www.naver.com/html/home.html"
+  src="www.instagram.com/html/photo.jpg"
+  ```
+
+  - 상대 경로 방식
+    - 출발 위치 기준에 따라서 상대적으로 경로(주소) 표시 형태가 변경
+    - 간단하긴 한데, 같은 자원의 위치에 대해서 표시 방식이 너무 많음
+    - 자원의 위치가 이동하면, 주소를 모두 수정해야함
+    - ../ : 한 단계 상위 폴더로 이동
+    - ../../ : 두 단계 상위 폴더로 이동
+
+  ```
+  root / html / home.html
+                sub.html
+         images / photo.jpg
+
+  위치 기준 : sub.html
+  href="home.html"
+  src="../images/photo.jpg"
+  ```
+  
+  - root 상대 경로 방식 ** 실무입장에선 최고(단, 초기 세팅이 필요) **
+    - root : 최상위 경로(/)
+    - root 경로에서 부터 찾아갈 수 있도록 상대 경로 방식을 변형
+    - 절대주소보다 짧아짐. 같은 서버안에서는 절대주소처럼 쓰임
+  ```
+  root / html / home.html
+                sub.html
+         images / photo.jpg
+
+  위치 기준 : sub.html
+
+  href="/html/home.html"
+  src="/images/photo.jpg"
+  ```
