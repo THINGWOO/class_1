@@ -59,4 +59,13 @@
 var a;
 a = 0;
 a = 10;
+
+var b = 20;
 ```
+
+- var, let, const
+  - var : ~ES5
+  - let, const : ES6~
+
+- var, let
+- const
